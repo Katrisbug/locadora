@@ -20,13 +20,15 @@ class Itens:
             return f'O item {self.__titulo} está disponivel.'
 
 class Filme (Itens):
-    def __init__(self, genero:str, duracao:int):
+    def __init__(self, genero:str, duracao:int, codigo:int, titulo:str):
+        Itens.__init__(self, codigo, titulo)
         self.__genero = genero
         self.__duracao = duracao
     
 
 class Jogo (Itens):
-    def __init__(self, plataforma:str, faixa_etaria:int):
+    def __init__(self, plataforma:str, faixa_etaria:int, codigo:int, titulo:str):
+        Itens.__init__(self, codigo, titulo)
         self.__plataforma = plataforma
         self.__faixa_etaria = faixa_etaria
 
@@ -53,7 +55,8 @@ class Clientes:
         
 
 class Locadora:
-    def __init__ (self):
+    def __init__ (self, nome:str):
+        self.__nome = nome
         self.__clientes = []
         self.__itens = []
 

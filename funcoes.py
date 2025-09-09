@@ -1,4 +1,12 @@
+import os
 from classes import *
+
+LocadoraJus = Locadora('Locadora_Jussara')
+
+def ls():
+    os.system('pause...')
+    os.system('cls')
+
 
 def cadastrar_cliente(locadora: Locadora):
     nome = input("Nome do cliente: ")
