@@ -67,12 +67,45 @@ class Locadora:
         self.__item.append (item)
 
     def listar_clientes (self,):
-        if not self.__clientes:
-            return 'Nenhum cliente cadastrado.'
+        return [(cliente.get_nome(), cliente.get_cpf()) for cliente in self.__clientes]
 
     def listar_itens (self):
-        for item in self.__itens_Locados:
-            return (item)
+        return ((item.get_codigo(), item.get_titulo(), "Disponível" if item.is_disponivel() else "Alugado")
+        for item in self.__itens)
+    
+    #gets 
+    def get_nome(self):
+        return self.__nome
+
+    def get_clientes(self):
+        return self.__clientes
+
+    def get_itens(self):
+        return self.__itens
+    
+    def get_nome(self):
+        return self.__nome
+
+    def get_cpf(self):
+        return self.__cpf
+
+    def get_itens_locados(self):
+        return self.__itens_locados
+    
+    def get_plataforma(self):
+        return self.__plataforma
+
+    def get_faixa_etaria(self):
+        return self.__faixa_etaria
+    
+    def get_codigo(self):
+        return self.__codigo
+
+    def get_titulo(self):
+        return self.__titulo
+    
+
+
 
 
 
