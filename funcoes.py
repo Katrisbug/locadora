@@ -1,8 +1,10 @@
+from classes import *
+
 def cadastrar_cliente(locadora: Locadora):
     nome = input("Nome do cliente: ")
     cpf = input("CPF do cliente: ")
-    cliente = Cliente(nome, cpf)
-    locadora.cadastrarCliente(cliente)
+    cliente = Clientes(nome, cpf)
+    locadora.cadastrarClientes(cliente)
     print("Cliente cadastrado com sucesso!")
 
 def cadastrar_item(locadora: Locadora):
@@ -23,3 +25,13 @@ def cadastrar_item(locadora: Locadora):
 
     locadora.cadastrarItem(item)
     print("Item cadastrado com sucesso!")
+
+def listar_clientes(locadora: Locadora):
+    print("\n Clientes:")
+    for nome, cpf in locadora.listarClientes():
+        print(f"- {nome} (CPF: {cpf})")
+
+def listar_itens(locadora: Locadora):
+    print("\n Itens:")
+    for titulo, status in locadora.listarItens():
+        print(f"- {titulo} ({status})")
