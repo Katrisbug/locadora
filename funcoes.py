@@ -31,7 +31,7 @@ def cadastrar_item(locadora):
         faixa = int(input("Faixa etária: "))
         item = Jogo(codigo, titulo, plataforma, faixa)
 
-    locadora.cadastrarItem(item)
+    locadora.cadastrar_item(item)
     print("Item cadastrado com sucesso!")
 
 def listar_clientes(locadora):
@@ -48,8 +48,8 @@ def locar_item(locadora):
     cpf = input("CPF do cliente: ")
     codigo = int(input("Código do item: "))
 
-    cliente = locadora.buscarCliente(cpf)
-    item = locadora.buscarItem(codigo)
+    cliente = locadora.buscar_cliente(cpf)
+    item = locadora.buscar_item(codigo)
 
     if cliente and item:
         if cliente.locar(item):
@@ -64,8 +64,8 @@ def devolver_item(locadora):
     cpf = input("CPF do cliente: ")
     codigo = int(input("Código do item: "))
 
-    cliente = locadora.buscarCliente(cpf)
-    item = locadora.buscarItem(codigo)
+    cliente = locadora.buscar_cliente(cpf)
+    item = locadora.buscar_item(codigo)
 
     if cliente and item:
         if cliente.devolver(item):

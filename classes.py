@@ -18,6 +18,12 @@ class Itens:
             return f'O item {self.__titulo} foi devolvido com sucesso.'
         else:
             return f'O item {self.__titulo} está disponivel.'
+        
+    def is_disponivel(self):
+        return self.__disponivel
+
+    def set_disponivel(self, valor: bool):
+        self.__disponivel = valor
 
 class Filme (Itens):
     def __init__(self, genero:str, duracao:int, codigo:int, titulo:str):
@@ -67,41 +73,39 @@ class Locadora:
 
 
     def listar_clientes (self,):
-        return [(cliente.get_nome(), cliente.get_cpf()) for cliente in self.__clientes]
+        return [(cliente.getNome(), cliente.getCpf()) for cliente in self.__clientes]
 
     def listar_itens (self):
-        return ((item.get_codigo(), item.get_titulo(), "Disponível" if item.is_disponivel() else "Alugado")
+        return ((item.getCodigo(), item.getTitulo(), "Disponível" if item.is_disponivel() else "Alugado")
         for item in self.__itens)
     
     #gets 
-    def get_nome(self):
+    def getNome(self):
         return self.__nome
 
-    def get_clientes(self):
+    def getClientes(self):
         return self.__clientes
 
-    def get_itens(self):
+    def getItens(self):
         return self.__itens
     
-    def get_nome(self):
-        return self.__nome
 
-    def get_cpf(self):
+    def getCpf(self):
         return self.__cpf
 
-    def get_itens_locados(self):
+    def getItens_locados(self):
         return self.__itens_locados
     
-    def get_plataforma(self):
+    def getPlataforma(self):
         return self.__plataforma
 
-    def get_faixa_etaria(self):
+    def getFaixa_etaria(self):
         return self.__faixa_etaria
     
-    def get_codigo(self):
+    def getCodigo(self):
         return self.__codigo
 
-    def get_titulo(self):
+    def getTitulo(self):
         return self.__titulo
     
 
