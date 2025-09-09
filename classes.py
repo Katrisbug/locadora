@@ -45,8 +45,13 @@ class Clientes:
             print(f'O item {item.titulo} não está disponivel pra locar. ')
 
 
-    def devolver (Itens):
-        pass
+    def devolver (self, item:Itens):
+        if item in self.__itens_Locados:
+            item.__devolver()
+            self.__itens_Locados.remove(Itens)
+            print(f'O cliente {self.__nome} devolveu o item {item.__titulo}.')
+        else:
+            print(f'O cliente {self.__nome} não possui o item {item.__titulo} alugado.')
 
     listar_itens()
 
