@@ -35,3 +35,34 @@ def listar_itens(locadora: Locadora):
     print("\n Itens:")
     for titulo, status in locadora.listarItens():
         print(f"- {titulo} ({status})")
+
+def locar_item(locadora: Locadora):
+    cpf = input("CPF do cliente: ")
+    codigo = int(input("Código do item: "))
+
+    cliente = locadora.buscarCliente(cpf)
+    item = locadora.buscarItem(codigo)
+
+    if cliente and item:
+        if cliente.locar(item):
+            print("Item alugado com sucesso!")
+        else:
+            print("Item indisponível!")
+    else:
+        print("Cliente ou item não encontrado.")
+
+
+def devolver_item(locadora: Locadora):
+    cpf = input("CPF do cliente: ")
+    codigo = int(input("Código do item: "))
+
+    cliente = locadora.buscarCliente(cpf)
+    item = locadora.buscarItem(codigo)
+
+    if cliente and item:
+        if cliente.devolver(item):
+            print("Item devolvido com sucesso!")
+        else:
+            print("Este cliente não alugou este item.")
+    else:
+        print("Cliente ou item não encontrado.")
