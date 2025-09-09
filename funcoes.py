@@ -1,7 +1,7 @@
 import os
 from classes import *
 
-LocadoraJus = Locadora('Locadora_Jussara')
+locadora = Locadora()
 
 def ls():
     os.system('pause...')

@@ -55,8 +55,7 @@ class Clientes:
         
 
 class Locadora:
-    def __init__ (self, nome:str):
-        self.__nome = nome
+    def __init__ (self):
         self.__clientes = []
         self.__itens = []
 
@@ -65,6 +64,7 @@ class Locadora:
 
     def cadastro_itens (self, item: Itens):
         self.__item.append (item)
+
 
     def listar_clientes (self,):
         return [(cliente.get_nome(), cliente.get_cpf()) for cliente in self.__clientes]
