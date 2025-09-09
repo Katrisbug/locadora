@@ -15,24 +15,29 @@ def cadastrar_cliente(locadora):
     locadora.cadastrarClientes(cliente)
     print("Cliente cadastrado com sucesso!")
 
-def cadastrar_item(locadora):
-    print("1 - Filme\n2 - Jogo")
-    opc = input("Escolha o tipo de item: ")
+def cadastrarItem(self, item: Itens):
+        self.__itens.append(item)
+        print(f"Item {item.getTitulo()} cadastrado com sucesso!")
 
-    codigo = int(input("Código do item: "))
-    titulo = input("Título: ")
+def cadastrar_filme(locadora):
+        try:
+            titulo = input("Título: ")
+            genero = input("Gênero: ")
+            duracao = int(input("Duração (minutos): "))
+            filme = Filme(titulo, genero, duracao)
+            locadora.cadastrarItem(filme)
+            print(f"Filme '{filme.getTitulo()}' cadastrado com código {filme.getCodigo()}!")
+            
+        except ValueError:
+            print(" Entrada inválida!")
 
-    if opc == "1":
-        genero = input("Gênero: ")
-        duracao = int(input("Duração (minutos): "))
-        item = Filme(codigo, titulo, genero, duracao)
-    else:
-        plataforma = input("Plataforma: ")
-        faixa = int(input("Faixa etária: "))
-        item = Jogo(codigo, titulo, plataforma, faixa)
-
-    locadora.cadastrar_item(item)
-    print("Item cadastrado com sucesso!")
+def cadastrar_jogo(locadora):
+    try:
+        titulo = input ('Título:')
+        plataforma = input ('Gênero:')
+    
+    except ValueError:
+        print('Entrada inválida!')
 
 def listar_clientes(locadora):
     print("\n Clientes:")

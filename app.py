@@ -22,7 +22,7 @@ while True:
                     ls()
                 case "2":
                     ls()
-                    cadastrar_item(locadora)
+                    cadastrarItem(locadora)
                     ls()
                 case "3":
                     ls()
