@@ -17,7 +17,7 @@ class Itens:
             self.__disponivel = True
             print(f'O item {self.__titulo} foi devolvido com sucesso.')
         else:
-            print(f'O item {self.__titulo} está disponível.')
+            print(f'O item {self.__titulo} está disponivel.')
 
 class Filme (Itens):
     def __init__(self, genero:str, duracao:int):
@@ -34,10 +34,16 @@ class Clientes:
     def __init__(self, nome:str, cpf:str):
         self.__nome = nome
         self.__cpf = cpf
-        self.__itens_locados = []
+        self.__itens_Locados = []
 
-    def locar (Itens):
-        pass
+    def locar (self, item:Itens):
+        if item.__disponivel:
+            item.__alugar()
+            self.__itens_Locados.append(Itens)
+            print(f'O cliente {self.__nome} alugou o item{item.__titulo}.')
+        else:
+            print(f'O item {item.titulo} não está disponivel pra locar. ')
+
 
     def devolver (Itens):
         pass
