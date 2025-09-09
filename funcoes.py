@@ -8,14 +8,14 @@ def ls():
     os.system('cls')
 
 
-def cadastrar_cliente(locadora: Locadora):
+def cadastrar_cliente(locadora):
     nome = input("Nome do cliente: ")
     cpf = input("CPF do cliente: ")
     cliente = Clientes(nome, cpf)
     locadora.cadastrarClientes(cliente)
     print("Cliente cadastrado com sucesso!")
 
-def cadastrar_item(locadora: Locadora):
+def cadastrar_item(locadora):
     print("1 - Filme\n2 - Jogo")
     opc = input("Escolha o tipo de item: ")
 
@@ -34,17 +34,17 @@ def cadastrar_item(locadora: Locadora):
     locadora.cadastrarItem(item)
     print("Item cadastrado com sucesso!")
 
-def listar_clientes(locadora: Locadora):
+def listar_clientes(locadora):
     print("\n Clientes:")
     for nome, cpf in locadora.listarClientes():
         print(f"- {nome} (CPF: {cpf})")
 
-def listar_itens(locadora: Locadora):
+def listar_itens(locadora):
     print("\n Itens:")
     for titulo, status in locadora.listarItens():
         print(f"- {titulo} ({status})")
 
-def locar_item(locadora: Locadora):
+def locar_item(locadora):
     cpf = input("CPF do cliente: ")
     codigo = int(input("Código do item: "))
 
@@ -60,7 +60,7 @@ def locar_item(locadora: Locadora):
         print("Cliente ou item não encontrado.")
 
 
-def devolver_item(locadora: Locadora):
+def devolver_item(locadora):
     cpf = input("CPF do cliente: ")
     codigo = int(input("Código do item: "))
 

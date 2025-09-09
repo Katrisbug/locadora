@@ -18,27 +18,27 @@ while True:
             match opcao:
                 case "1":
                     ls()
-                    cadastrar_cliente(Locadora)
+                    cadastrar_cliente(locadora)
                     ls()
                 case "2":
                     ls()
-                    cadastrar_item(Locadora)
+                    cadastrar_item(locadora)
                     ls()
                 case "3":
                     ls()
-                    listar_clientes(Locadora)
+                    listar_clientes(locadora)
                     ls()
                 case "4":
                     ls()
-                    listar_itens(Locadora)
+                    listar_itens(locadora)
                     ls()
                 case "5":
                     ls()
-                    locar_item(Locadora)
+                    locar_item(locadora)
                     ls()
                 case "6":
                     ls()
-                    devolver_item(Locadora)
+                    devolver_item(locadora)
                     ls()
                 case "0":
                     ls()

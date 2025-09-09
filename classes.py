@@ -39,13 +39,13 @@ class Clientes:
         self.__itens_Locados = []
 
     def locar (self, item:Itens):
-            item.__alugar()
+            item.alugar()
             self.__itens_Locados.append(item)
 
 
     def devolver (self, item:Itens):
         if item in self.__itens_Locados:
-            item.__devolver()
+            item.devolver()
             self.__itens_Locados.remove(item)
             return True
         return False
@@ -63,7 +63,7 @@ class Locadora:
         self.__clientes.append(cliente)
 
     def cadastro_itens (self, item: Itens):
-        self.__item.append (item)
+        self.__itens.append (item)
 
 
     def listar_clientes (self,):
