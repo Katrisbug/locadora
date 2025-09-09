@@ -1,5 +1,5 @@
 class Itens:
-    def __init__(self, codigo, titulo):
+    def __init__(self, codigo:int, titulo:str):
         self.__codigo = codigo
         self.__titulo = titulo
         self.__disponivel = True
@@ -20,17 +20,18 @@ class Itens:
             print(f'O item {self.__titulo} está disponível.')
 
 class Filme (Itens):
-    def __init__(self, codigo, titulo, genero, duracao):
+    def __init__(self, genero:str, duracao:int):
         self.__genero = genero
         self.__duracao = duracao
+    
 
 class Jogo (Itens):
-    def __init__(self, codigo, titulo, plataforma, faixa_etaria):
+    def __init__(self, plataforma:str, faixa_etaria:int):
         self.__plataforma = plataforma
         self.__faixa_etaria = faixa_etaria
 
 class Clientes:
-    def __init__(self, nome, cpf, itens_locados):
+    def __init__(self, nome:str, cpf:str):
         self.__nome = nome
         self.__cpf = cpf
         self.__itens_locados = []
@@ -44,7 +45,7 @@ class Clientes:
     listar_itens()
 
 class Locadora:
-    def __init__ (self, ):
+    def __init__ (self):
         self.__clientes = []
         self.__itens = []
 
