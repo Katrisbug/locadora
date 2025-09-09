@@ -6,18 +6,18 @@ class Itens:
 
     def alugar (self):
         if self.__disponivel:
-            self.__disponivel : False
-            print(f'O item {self.__titulo} alugado com sucesso!')
+            self.__disponivel = False
+            return f'O item {self.__titulo} alugado com sucesso!'
         else:
-            print(f'O item {self.__titulo} não esta disponivel para alugar.')
+            return f'O item {self.__titulo} não esta disponivel para alugar.'
     
 
     def devolver (self):
         if not self.__disponivel:
             self.__disponivel = True
-            print(f'O item {self.__titulo} foi devolvido com sucesso.')
+            return f'O item {self.__titulo} foi devolvido com sucesso.'
         else:
-            print(f'O item {self.__titulo} está disponivel.')
+            return f'O item {self.__titulo} está disponivel.'
 
 class Filme (Itens):
     def __init__(self, genero:str, duracao:int):
@@ -37,40 +37,39 @@ class Clientes:
         self.__itens_Locados = []
 
     def locar (self, item:Itens):
-        if item.__disponivel:
             item.__alugar()
             self.__itens_Locados.append(Itens)
-            print(f'O cliente {self.__nome} alugou o item{item.__titulo}.')
-        else:
-            print(f'O item {item.titulo} não está disponivel pra locar. ')
 
 
     def devolver (self, item:Itens):
         if item in self.__itens_Locados:
             item.__devolver()
             self.__itens_Locados.remove(Itens)
-            print(f'O cliente {self.__nome} devolveu o item {item.__titulo}.')
-        else:
-            print(f'O cliente {self.__nome} não possui o item {item.__titulo} alugado.')
+            return True
+        return False
 
-    listar_itens()
+    def listar_itens (self):
+        return self.__itens_Locados
+        
 
 class Locadora:
     def __init__ (self):
         self.__clientes = []
         self.__itens = []
 
-    def cadastro_cliente (self, ):
-        pass
+    def cadastro_cliente (self, clientes: Clientes):
+        self.__clientes.append(Clientes)
 
     def cadastro_itens (self):
-        pass
+        self.__item.append (Itens)
 
     def listar_clientes (self,):
-        pass
+        if not self.__clientes:
+            return 'Nenhum cliente cadastrado.'
 
     def listar_itens (self):
-        pass
+        for item in self.__itens_Locados:
+            return (Itens)
 
 
 
