@@ -13,7 +13,7 @@ while True:
             print("6 - Devolver item")
             print("0 - Sair")
 
-            opcao = input("\n --> ")
+            opcao = int(input("\n --> "))
 
             match opcao:
                 case 1:
