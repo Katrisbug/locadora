@@ -88,7 +88,7 @@ class Clientes:
         return self.__cpf
 
     def getItens_locados(self):
-        return self.__itens_locados
+        return self.__itens_Locados
     
     def getNome(self):
         return self.__nome
@@ -111,6 +111,13 @@ class Locadora:
         print("\nClientes:")
         for cliente in self.__clientes:
             print(f"- {cliente.getNome()} (CPF: {cliente.getCpf()})")
+            itens_locados = cliente.getItens_locados()
+            if itens_locados:
+                print("Itens locados:")
+                for item in itens_locados:
+                    print(f"    * {item.getTitulo()} (Código: {item.getCodigo()})")
+            else:
+                print("Nenhum item locado.")
 
     def listar_itens(self):
         print("\nItens:")
