@@ -15,7 +15,7 @@ def cadastrar_cliente(locadora):
     locadora.cadastrar_cliente(cliente)
     print("Cliente cadastrado com sucesso!")
 
-def cadastrarItem(self, item: Itens):
+def cadastrar_itens(self, item: Itens):
         self.__itens.append(item)
         print(f"Item {item.getTitulo()} cadastrado com sucesso!")
 
