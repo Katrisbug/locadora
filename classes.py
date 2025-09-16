@@ -25,11 +25,25 @@ class Itens:
     def set_disponivel(self, valor: bool):
         self.__disponivel = valor
 
+    #gets de itens
+    def getCodigo(self):
+        return self.__codigo
+
+    def getTitulo(self):
+        return self.__titulo
+
 class Filme (Itens):
     def __init__(self, genero:str, duracao:int, codigo:int, titulo:str):
         Itens.__init__(self, codigo, titulo)
         self.__genero = genero
         self.__duracao = duracao
+
+    #gets de filme
+    def getGenero(self):
+        return self.__genero
+    
+    def getDuracao(self):
+        return self.__duracao
     
 
 class Jogo (Itens):
@@ -37,6 +51,13 @@ class Jogo (Itens):
         Itens.__init__(self, codigo, titulo)
         self.__plataforma = plataforma
         self.__faixa_etaria = faixa_etaria
+
+    #gets de jogo
+    def getPlataforma(self):
+        return self.__plataforma
+
+    def getFaixa_etaria(self):
+        return self.__faixa_etaria
 
 class Clientes:
     def __init__(self, nome:str, cpf:str):
@@ -58,6 +79,16 @@ class Clientes:
 
     def listar_itens (self):
         return self.__itens_Locados
+    
+    #gets do cliente
+    def getCpf(self):
+        return self.__cpf
+
+    def getItens_locados(self):
+        return self.__itens_locados
+    
+    def getNome(self):
+        return self.__nome
         
 
 class Locadora:
@@ -79,38 +110,11 @@ class Locadora:
         return ((item.getCodigo(), item.getTitulo(), "Disponível" if item.is_disponivel() else "Alugado")
         for item in self.__itens)
     
-    #gets 
-    def getNome(self):
-        return self.__nome
-
+    #gets da locadora
     def getClientes(self):
         return self.__clientes
 
     def getItens(self):
         return self.__itens
     
-
-    def getCpf(self):
-        return self.__cpf
-
-    def getItens_locados(self):
-        return self.__itens_locados
-    
-    def getPlataforma(self):
-        return self.__plataforma
-
-    def getFaixa_etaria(self):
-        return self.__faixa_etaria
-    
-    def getCodigo(self):
-        return self.__codigo
-
-    def getTitulo(self):
-        return self.__titulo
-    
-
-
-
-
-
     
