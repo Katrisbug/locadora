@@ -73,8 +73,6 @@ class Clientes:
         else:
             return False
 
-
-
     def devolver (self, item:Itens):
         if item in self.__itens_Locados:
             item.devolver()
@@ -130,6 +128,16 @@ class Locadora:
             if item.getCodigo() == codigo:
                 return item
         return None
+    
+    def codigo_cliente(self):
+        codigo = self.__codigo_cliente
+        self.__codigo_cliente += 1
+        return codigo
+    
+    def codigo_item(self):
+        codigo = self.__codigo_item
+        self.__codigo_item += 1
+        return codigo
     
     #gets da locadora
     def getClientes(self):
