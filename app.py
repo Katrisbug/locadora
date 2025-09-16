@@ -16,31 +16,31 @@ while True:
             opcao = input("\n --> ")
 
             match opcao:
-                case "1":
+                case 1:
                     ls()
                     cadastrar_cliente(locadora)
                     ls()
-                case "2":
+                case 2:
                     ls()
                     cadastrar_itens(locadora)
                     ls()
-                case "3":
+                case 3:
                     ls()
                     listar_clientes(locadora)
                     ls()
-                case "4":
+                case 4:
                     ls()
                     listar_itens(locadora)
                     ls()
-                case "5":
+                case 5:
                     ls()
                     locar_item(locadora)
                     ls()
-                case "6":
+                case 6:
                     ls()
                     devolver_item(locadora)
                     ls()
-                case "0":
+                case 0:
                     ls()
                     print("Saindo...")
                     break
@@ -48,4 +48,5 @@ while True:
                     print("Opção inválida!")
 
         except Exception as e:
-            print(f"Erro: {e}")
+            print(f"Erro inesperado: {e}")
+            ls()
