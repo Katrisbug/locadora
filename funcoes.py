@@ -13,6 +13,7 @@ def cadastrar_cliente(locadora):
     cpf = input("CPF do cliente: ")
     cliente = Clientes(nome, cpf)
     locadora.cadastrar_cliente(cliente)
+    locadora.codigo_cliente()
     print("Cliente cadastrado com sucesso!")
 
 def cadastrar_itens(locadora):

@@ -99,6 +99,7 @@ class Locadora:
         self.__clientes = []
         self.__itens = []
         self.__codigo_item = 1
+        self.__codigo_cliente = 1
 
     def cadastrar_cliente(self, cliente: Clientes):
         self.__clientes.append(cliente)
@@ -108,14 +109,14 @@ class Locadora:
 
 
     def listar_clientes(self):
-        print("\nClientes:")
+        print("Clientes:")
         for cliente in self.__clientes:
-            print(f"- {cliente.getNome()} (CPF: {cliente.getCpf()})")
+            print(f"\n - Código do Cliente: {cliente.getCodigoCliente()} | - Nome: {cliente.getNome()} (CPF: {cliente.getCpf()})")
             itens_locados = cliente.getItens_locados()
             if itens_locados:
                 print("Itens locados:")
                 for item in itens_locados:
-                    print(f"    * {item.getTitulo()} (Código: {item.getCodigo()})")
+                    print(f"    --> {item.getTitulo()} (Código: {item.getCodigo()})")
             else:
                 print("Nenhum item locado.")
 
@@ -142,11 +143,19 @@ class Locadora:
         self.__codigo_item += 1
         return codigo
     
+    def codigo_cliente(self):
+        codigo = self.__codigo_cliente
+        self.__codigo_cliente += 1
+        return codigo
+    
     #gets da locadora
     def getClientes(self):
         return self.__clientes
 
     def getItens(self):
         return self.__itens
+    
+    def getCodigoCliente(self):
+        return self.__codigo_cliente
     
     
