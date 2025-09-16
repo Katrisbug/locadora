@@ -65,9 +65,14 @@ class Clientes:
         self.__cpf = cpf
         self.__itens_Locados = []
 
-    def locar (self, item:Itens):
+    def locar(self, item: Itens):
+        if item.is_disponivel():
             item.alugar()
             self.__itens_Locados.append(item)
+            return True
+        else:
+            return False
+
 
 
     def devolver (self, item:Itens):
