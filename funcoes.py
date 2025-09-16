@@ -41,12 +41,12 @@ def cadastrar_jogo(locadora):
 
 def listar_clientes(locadora):
     print("\n Clientes:")
-    for nome, cpf in locadora.listarClientes():
+    for nome, cpf in locadora.listar_clientes():
         print(f"- {nome} (CPF: {cpf})")
 
 def listar_itens(locadora):
     print("\n Itens:")
-    for titulo, status in locadora.listarItens():
+    for titulo, status in locadora.listar_itens():
         print(f"- {titulo} ({status})")
 
 def locar_item(locadora):
