@@ -60,10 +60,11 @@ class Jogo (Itens):
         return self.__faixa_etaria
 
 class Clientes:
-    def __init__(self, nome:str, cpf:str):
+    def __init__(self, nome:str, cpf:str, codigo_cliente:int):
         self.__nome = nome
         self.__cpf = cpf
         self.__itens_Locados = []
+        self.__codigo_cliente = codigo_cliente
 
     def locar(self, item: Itens):
         if item.is_disponivel():
@@ -92,6 +93,9 @@ class Clientes:
     
     def getNome(self):
         return self.__nome
+    
+    def getCodigoCliente(self):
+        return self.__codigo_cliente
         
 
 class Locadora:
@@ -155,7 +159,5 @@ class Locadora:
     def getItens(self):
         return self.__itens
     
-    def getCodigoCliente(self):
-        return self.__codigo_cliente
     
     

@@ -11,9 +11,9 @@ def ls():
 def cadastrar_cliente(locadora):
     nome = input("Nome do cliente: ")
     cpf = input("CPF do cliente: ")
-    cliente = Clientes(nome, cpf)
+    codigo = locadora.codigo_cliente()
+    cliente = Clientes(nome, cpf, codigo)
     locadora.cadastrar_cliente(cliente)
-    locadora.codigo_cliente()
     print("Cliente cadastrado com sucesso!")
 
 def cadastrar_itens(locadora):
