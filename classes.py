@@ -107,12 +107,24 @@ class Locadora:
         print("\nClientes:")
         for cliente in self.__clientes:
             print(f"- {cliente.getNome()} (CPF: {cliente.getCpf()})")
-            
+
     def listar_itens(self):
         print("\nItens:")
         for item in self.__itens:
             status = "Disponível" if item.is_disponivel() else "Alugado"
             print(f"- {item.getCodigo()} - {item.getTitulo()} ({status})")
+
+    def buscar_cliente(self, cpf):
+        for cliente in self.__clientes:
+            if cliente.getCpf() == cpf:
+                return cliente
+        return None
+    
+    def buscar_item(self, codigo):
+        for item in self.__itens:
+            if item.getCodigo() == codigo:
+                return item
+        return None
     
     #gets da locadora
     def getClientes(self):
