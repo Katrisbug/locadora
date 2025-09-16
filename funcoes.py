@@ -15,17 +15,26 @@ def cadastrar_cliente(locadora):
     locadora.cadastrar_cliente(cliente)
     print("Cliente cadastrado com sucesso!")
 
-def cadastrar_itens(self, item: Itens):
-        self.__itens.append(item)
-        print(f"Item {item.getTitulo()} cadastrado com sucesso!")
+def cadastrar_itens(locadora):
+    tipo = input("O item é um Filme (F) ou Jogo (J)? ").strip().upper()
+
+    if tipo == "F":
+        cadastrar_filme(locadora)
+
+    elif tipo == "J":
+        cadastrar_jogo(locadora) 
+
+    else:
+        print("Opção inválida! Digite apenas F para Filme ou J para Jogo.")
 
 def cadastrar_filme(locadora):
         try:
             titulo = input("Título: ")
             genero = input("Gênero: ")
             duracao = int(input("Duração (minutos): "))
-            filme = Filme(titulo, genero, duracao)
-            locadora.cadastrarItem(filme)
+            codigo = int(input("Código do filme: "))
+            filme = Filme(genero, duracao, codigo, titulo)
+            locadora.cadastrar_itens(Filme)
             print(f"Filme '{filme.getTitulo()}' cadastrado com código {filme.getCodigo()}!")
             
         except ValueError:
@@ -33,11 +42,16 @@ def cadastrar_filme(locadora):
 
 def cadastrar_jogo(locadora):
     try:
-        titulo = input ('Título:')
-        plataforma = input ('Gênero:')
-    
+        titulo = input("Título: ")
+        plataforma = input("Plataforma: ")
+        faixa_etaria = int(input("Faixa etária: "))
+        codigo = int(input("Código do jogo: "))
+        jogo = Jogo(plataforma, faixa_etaria, codigo, titulo)
+        locadora.cadastrar_itens(Jogo)
+        print(f"Jogo '{jogo.getTitulo()}' cadastrado com código {jogo.getCodigo()}!")
+
     except ValueError:
-        print('Entrada inválida!')
+        print("Entrada inválida!")
 
 def listar_clientes(locadora):
     print("\n Clientes:")
@@ -51,8 +65,13 @@ def listar_itens(locadora):
 
 def locar_item(locadora):
     cpf = input("CPF do cliente: ")
-    codigo = int(input("Código do item: "))
+    try:
+        codigo = int(input("Código do item: "))
 
+    except ValueError:
+        print("Código inválido")
+        return
+    
     cliente = locadora.buscar_cliente(cpf)
     item = locadora.buscar_item(codigo)
 
@@ -64,10 +83,14 @@ def locar_item(locadora):
     else:
         print("Cliente ou item não encontrado.")
 
-
 def devolver_item(locadora):
     cpf = input("CPF do cliente: ")
-    codigo = int(input("Código do item: "))
+    try:
+        codigo = int(input("Código do item: "))
+
+    except ValueError:
+        print("Código inválido")
+        return
 
     cliente = locadora.buscar_cliente(cpf)
     item = locadora.buscar_item(codigo)
