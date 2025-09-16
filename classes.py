@@ -65,7 +65,7 @@ class Locadora:
         self.__clientes = []
         self.__itens = []
 
-    def cadastro_cliente (self, cliente: Clientes):
+    def cadastrar_cliente(self, cliente: Clientes):
         self.__clientes.append(cliente)
 
     def cadastro_itens (self, item: Itens):

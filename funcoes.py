@@ -12,7 +12,7 @@ def cadastrar_cliente(locadora):
     nome = input("Nome do cliente: ")
     cpf = input("CPF do cliente: ")
     cliente = Clientes(nome, cpf)
-    locadora.cadastrarClientes(cliente)
+    locadora.cadastrar_cliente(cliente)
     print("Cliente cadastrado com sucesso!")
 
 def cadastrarItem(self, item: Itens):
