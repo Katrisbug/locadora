@@ -103,15 +103,16 @@ class Locadora:
         self.__itens.append (item)
 
 
-    def listar_clientes (locadora):
+    def listar_clientes(self):
         print("\nClientes:")
-        for nome, cpf in locadora.listar_clientes():
-            print(f"- {nome} (CPF: {cpf})")
-
-    def listar_itens (locadora):
+        for cliente in self.__clientes:
+            print(f"- {cliente.getNome()} (CPF: {cliente.getCpf()})")
+            
+    def listar_itens(self):
         print("\nItens:")
-        for codigo, titulo, status in locadora.listar_itens():
-            print(f"- {codigo} - {titulo} ({status})")
+        for item in self.__itens:
+            status = "Disponível" if item.is_disponivel() else "Alugado"
+            print(f"- {item.getCodigo()} - {item.getTitulo()} ({status})")
     
     #gets da locadora
     def getClientes(self):

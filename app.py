@@ -26,11 +26,11 @@ while True:
                     ls()
                 case 3:
                     ls()
-                    listar_clientes(locadora)
+                    locadora.listar_clientes()
                     ls()
                 case 4:
                     ls()
-                    listar_itens(locadora)
+                    locadora.listar_itens()
                     ls()
                 case 5:
                     ls()

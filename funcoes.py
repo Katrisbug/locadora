@@ -34,7 +34,7 @@ def cadastrar_filme(locadora):
             duracao = int(input("Duração (minutos): "))
             codigo = int(input("Código do filme: "))
             filme = Filme(genero, duracao, codigo, titulo)
-            locadora.cadastrar_itens(Filme)
+            locadora.cadastrar_itens(filme)
             print(f"Filme '{filme.getTitulo()}' cadastrado com código {filme.getCodigo()}!")
             
         except ValueError:
@@ -47,21 +47,12 @@ def cadastrar_jogo(locadora):
         faixa_etaria = int(input("Faixa etária: "))
         codigo = int(input("Código do jogo: "))
         jogo = Jogo(plataforma, faixa_etaria, codigo, titulo)
-        locadora.cadastrar_itens(Jogo)
+        locadora.cadastrar_itens(jogo)
         print(f"Jogo '{jogo.getTitulo()}' cadastrado com código {jogo.getCodigo()}!")
 
     except ValueError:
         print("Entrada inválida!")
 
-def listar_clientes(locadora):
-    print("\n Clientes:")
-    for nome, cpf in locadora.listar_clientes():
-        print(f"- {nome} (CPF: {cpf})")
-
-def listar_itens(locadora):
-    print("\n Itens:")
-    for titulo, status in locadora.listar_itens():
-        print(f"- {titulo} ({status})")
 
 def locar_item(locadora):
     cpf = input("CPF do cliente: ")
